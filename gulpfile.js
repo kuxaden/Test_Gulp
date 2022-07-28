@@ -1,14 +1,15 @@
 const gulp = require('gulp')
-const less = require('gulp-less')
 const del = require('del')
 const rename = require('gulp-rename')
 const cleanCSS = require('gulp-clean-css')
 const uglify = require('gulp-uglify')
 const babel = require('gulp-babel')
 const concat = require('gulp-concat')
+const sass = require('gulp-sass')(require('sass'))
+const sourcemaps = require('gulp-sourcemaps')
 const paths = {
     styles: {
-        src: 'src/styles/**/*.less',
+        src: ['src/styles/**/*.sass', 'src/styles/**/*.scss'],
         dest: 'dist/css/'
     },
     scripts: {
@@ -23,12 +24,14 @@ function clean(){
 // Обработка файла стилей;
 function styles() {
     return gulp.src(paths.styles.src)
-    .pipe(less())
+    .pipe(sourcemaps.init())
+    .pipe(sass().on('error', sass.logError)) 
     .pipe(cleanCSS())
     .pipe (rename({
         basename: 'main',
         suffix: '.min'
     }))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest(paths.styles.dest))
 }
 // обработка скриптов;

@@ -1,0 +1,47 @@
+// переменные цвета
+$dark: #212529;
+$gold: rgb(255,215,0);
+$white: #fff;
+.navbar-brand{
+  color: $gold;
+  &:hover{
+    color: $gold;
+  }
+}
+.navbar-nav {
+  li {
+    a {
+      color: $white;
+      text-decoration: none;
+      margin-left: 10px;
+      height: 40px;
+      border-radius: 5px;
+      &:hover {
+        color: $gold;
+        border: 1px solid;
+      }
+      &:active {
+        color: $dark;
+        background-color: $gold;
+      }
+    }
+  }
+}
+.search-block{
+  .form-control {
+    background-color: darkslategray;
+}
+div #search-clear{
+  color: gold;
+  opacity: 1;
+}
+#editing-view-port > div{
+  color: gold;
+}
+.btn-dark {
+    border: 1px $gold solid;
+    &:hover{
+      color: gold;
+    }
+  }
+}
