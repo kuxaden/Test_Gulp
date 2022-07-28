@@ -12,7 +12,6 @@ Author: kuxaden
     "gulp-concat": "^2.6.1",
     "gulp-htmlmin": "^5.0.1",
     "gulp-imagemin": "^7.1.0",
-    "gulp-less": "^5.0.0",
     "gulp-newer": "^1.4.0",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.1.0",
